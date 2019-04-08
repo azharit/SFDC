@@ -55,9 +55,16 @@
   <!-- Add ItemGroup elements that contain one or more Schemas, Orchestrations, Transforms, etc. elements that describe -->
   <!-- the specific artifacts in your solution that need to be deployed. Use IntelliSense as a guide. -->
   <ItemGroup>
-    <Schemas Include="YourSchemas.dll">
+    <Schemas Include="CCC.SFDC.Schemas.dll">
       <LocationPath>..\$(ProjectName)\bin\$(Configuration)</LocationPath>
     </Schemas>
+    <Transforms Include="CCC.SFDC.Maps.dll">
+      <LocationPath>..\CCC.SFDC.Maps\bin\$(Configuration)</LocationPath>
+    </Transforms>
+
+    <Orchestrations Include="CCC.SFDC.Process.dll">
+      <LocationPath>..\CCC.SFDC.Process\bin\$(Configuration)</LocationPath>
+    </Orchestrations>
   </ItemGroup>
   <!-- !!! TODO !!! -->
   <Import Project="$(DeploymentFrameworkTargetsPath)BizTalkDeploymentFramework.targets" />
